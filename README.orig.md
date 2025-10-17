@@ -1,7 +1,6 @@
 <div align="center" markdown="1">
 
 <img src=".github/meshtastic_logo.png" alt="Meshtastic Logo" width="80"/>
-<<<<<<< HEAD
 <h1>Meshtastic Firmware</h1>
 
 ![GitHub release downloads](https://img.shields.io/github/downloads/meshtastic/firmware/total)
@@ -38,8 +37,4 @@ Join our community and help improve Meshtastic! 🚀
 ## Stats
 
 ![Alt](https://repobeats.axiom.co/api/embed/8025e56c482ec63541593cc5bd322c19d5c0bdcf.svg "Repobeats analytics image")
-=======
-<h1>Ме4тастик Firmware</h1>
 
-[Огигинальный README](/README.orig.md)
->>>>>>> 4ef4b5e26 (readme)
