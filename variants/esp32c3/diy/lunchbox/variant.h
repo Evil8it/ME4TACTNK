@@ -1,5 +1,5 @@
 
-//#define MY_NODE_ID      0xc0ffee01 
+#define MY_NODE_ID      0xc0ffee01 
 
 #define BUTTON_PIN      9   // BOOT BTN
 #define LED_PIN         12  // LED D4
