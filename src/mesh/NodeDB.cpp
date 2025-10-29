@@ -1129,16 +1129,16 @@ void NodeDB::installDefaultDeviceState()
  */
 void NodeDB::pickNewNodeNum()
 {
+    #ifdef MY_NODE_ID
+        myNodeInfo.my_node_num = MY_NODE_ID;
+        return;
+    #endif
+
     NodeNum nodeNum = myNodeInfo.my_node_num;
     getMacAddr(ourMacAddr); // Make sure ourMacAddr is set
     if (nodeNum == 0) {
-
-        #ifdef MY_NODE_ID
-            nodeNum = MY_NODE_ID;
-        #else
-            // Pick an initial nodenum based on the macaddr
-            nodeNum = (ourMacAddr[2] << 24) | (ourMacAddr[3] << 16) | (ourMacAddr[4] << 8) | ourMacAddr[5];
-        #endif
+        // Pick an initial nodenum based on the macaddr
+        nodeNum = (ourMacAddr[2] << 24) | (ourMacAddr[3] << 16) | (ourMacAddr[4] << 8) | ourMacAddr[5];
     }
 
     meshtastic_NodeInfoLite *found;
