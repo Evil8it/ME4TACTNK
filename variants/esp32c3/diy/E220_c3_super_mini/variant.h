@@ -8,8 +8,13 @@
 
 #define DEBUG_MUTE      1
 
+// If enabled remove from build_flags (platformio.info): 
+//  -D MESHTASTIC_EXCLUDE_SCREEN=1
+//  -D MESHTASTIC_EXCLUDE_I2C=1
+//  -D MESHTASTIC_EXCLUDE_INPUTBROKER=1
+#define HAS_SCREEN      0 
+
 // I2C
-#define HAS_SCREEN      0
 #define I2C_SDA         3
 #define I2C_SCL         4
 
@@ -38,7 +43,7 @@
 #define SX126X_RXEN     LORA_RXEN 
 #define SX126X_DIO2_AS_RF_SWITCH // DIO2 and TXEN connected
 #define SX126X_MAX_POWER    22
-#define TX_GAIN_LORA        0
+#define TX_GAIN_LORA        8
 
 #define USE_LLCC68    
 
