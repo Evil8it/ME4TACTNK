@@ -3,7 +3,7 @@
 #define MY_NODE_ID      0xdeadc0de 
 
 #define BUTTON_PIN      9   // BOOT BTN
-#define LED_PIN         12  // LED D4
+#define LED_PIN         LED_BUILTIN  // LED D4
 
 #define DEBUG_MUTE      1
 
@@ -37,7 +37,7 @@
 #define SX126X_RXEN     LORA_RXEN 
 #define SX126X_DIO2_AS_RF_SWITCH // DIO2 and TXEN connected
 #define SX126X_MAX_POWER    22
-#define TX_GAIN_LORA        0
+#define TX_GAIN_LORA        8
 
 
 // #define USE_LLCC68      // Original Chatter2 with LLCC68 module
