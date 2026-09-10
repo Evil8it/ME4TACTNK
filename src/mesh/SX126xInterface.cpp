@@ -91,7 +91,7 @@ template <typename T> bool SX126xInterface<T>::init()
     if (power < -9)
         power = -9;
 
-    // for fake E220-900M22S    
+    // for fake E220-900M22S @see https://github.com/jgromes/RadioLib/issues/1329
     #if SX126X_XTAL_FORCE
     lora.XTAL = true;
     #endif

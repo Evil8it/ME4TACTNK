@@ -1152,6 +1152,7 @@ void NodeDB::installDefaultDeviceState()
  */
 void NodeDB::pickNewNodeNum()
 {
+
     #ifdef MY_NODE_ID
         myNodeInfo.my_node_num = MY_NODE_ID;
         return;
