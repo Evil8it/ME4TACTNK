@@ -394,8 +394,12 @@ void ScanI2CTwoWire::scanPort(I2CPort port, uint8_t *address, uint8_t asize)
                         logFoundDevice("DPS310", (uint8_t)addr.address);
                         type = DPS310;
                         break;
+                    case 0x11:
+                        logFoundDevice("SPA06-003", (uint8_t)addr.address);
+                        type = SPA06;
+                        break;
                     }
-                    if (type == DPS310) {
+                    if (type == DPS310 || type == SPA06) {
                         break;
                     }
                 default:
@@ -649,7 +653,7 @@ void ScanI2CTwoWire::scanPort(I2CPort port, uint8_t *address, uint8_t asize)
                 SCAN_SIMPLE_CASE(DFROBOT_RAIN_ADDR, DFROBOT_RAIN, "DFRobot Rain Gauge", (uint8_t)addr.address);
                 SCAN_SIMPLE_CASE(LTR390UV_ADDR, LTR390UV, "LTR390UV", (uint8_t)addr.address);
                 SCAN_SIMPLE_CASE(PCT2075_ADDR, PCT2075, "PCT2075", (uint8_t)addr.address);
-                SCAN_SIMPLE_CASE(SCD30_ADDR, SCD30, "SCD30", (uint8_t)addr.address);
+
             case CST328_ADDR:
                 // Do we have the CST328 or the CST226SE,CST3530
                 {

@@ -779,6 +779,18 @@ void Router::handleReceived(meshtastic_MeshPacket *p, RxSource src)
             cancelSending(p->from, p->id);
             skipHandle = true;
         }
+
+        if (p->which_payload_variant == meshtastic_MeshPacket_decoded_tag &&
+            IS_ONE_OF(
+                p->decoded.portnum, 
+                meshtastic_PortNum_POSITION_APP, 
+                meshtastic_PortNum_TELEMETRY_APP
+            )
+        ) {
+            LOG_DEBUG("Handle but not send");
+            cancelSending(p->from, p->id);
+        }
+
     } else {
         printPacket("packet decoding failed or skipped (no PSK?)", p);
     }
